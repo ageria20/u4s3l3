@@ -94,6 +94,16 @@ public class Application {
         Location location3 = new Location("Eiffel Tower", "Paris");
         Location location4 = new Location("Sydney Opera House", "Sydney");
 
+        Person personFromDb = pd.getById("4726a28c-b81b-424e-ad97-1ea7bd37e688");
+        Person person2FromDb = pd.getById("ca9f4f5d-1a9d-41b8-98c7-bc86e38c2d4c");
+
+        Event eventFromDb = ed.getById("24b7c9ff-426a-4d3a-8473-ac9311b21337");
+        Event event2FromDb = ed.getById("9f6e8038-7504-4bb6-a793-1f7d76cd30b5");
+
+
+        Partecipation partConfirmed = new Partecipation(personFromDb, eventFromDb, StatusType.CONFIRMED );
+        Partecipation partNotConfirmed = new Partecipation(person2FromDb, event2FromDb, StatusType.NOT_CONFIRMED );
+
         /*pd.save(ross);
         pd.save(rachel);
         pd.save(chandler);
@@ -110,7 +120,10 @@ public class Application {
       ed.save(evento3);
       ed.save(evento4);*/
 
+        partD.save(partConfirmed);
+        partD.save(partNotConfirmed);
 
-        System.out.println("Hello World!");
+
+        System.out.println("TUTTO OK!");
     }
 }

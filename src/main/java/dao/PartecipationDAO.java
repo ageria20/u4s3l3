@@ -1,10 +1,10 @@
 package dao;
 
-import entities.Event;
 import entities.Partecipation;
-import entities.Person;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+
+import java.util.UUID;
 
 public class PartecipationDAO {
     private EntityManager em;
@@ -22,13 +22,13 @@ public class PartecipationDAO {
     }
 
 
-    public Partecipation getById(long id){
-        Partecipation found = em.find(Partecipation.class, id);
+    public Partecipation getById(String id){
+        Partecipation found = em.find(Partecipation.class, UUID.fromString(id));
         if( found == null) throw new RuntimeException("Evento non trovato");
         else return found;
     }
 
-    public void delete(long id){
+    public void delete(String id){
         Partecipation eventToDelete = getById(id); // Cerchiamo l'id del dato
         EntityTransaction transaction = em.getTransaction(); // Chidiamo all'eneity di aprire una transaction
         transaction.begin(); // iniziamo la Transaction

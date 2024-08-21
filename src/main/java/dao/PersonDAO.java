@@ -1,9 +1,12 @@
 package dao;
 
-import entities.Event;
 import entities.Person;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+
+import java.util.UUID;
+
+import static java.util.UUID.fromString;
 
 public class PersonDAO {
 
@@ -22,13 +25,13 @@ public class PersonDAO {
     }
 
 
-    public Person getById(long id){
-        Person found = em.find(Person.class, id);
+    public Person getById(String id){
+        Person found = em.find(Person.class, UUID.fromString(id));
         if( found == null) throw new RuntimeException("Evento non trovato");
         else return found;
     }
 
-    public void delete(long id){
+    public void delete(String id){
         Person eventToDelete = getById(id); // Cerchiamo l'id del dato
         EntityTransaction transaction = em.getTransaction(); // Chidiamo all'eneity di aprire una transaction
         transaction.begin(); // iniziamo la Transaction

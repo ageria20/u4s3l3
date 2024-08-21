@@ -12,16 +12,6 @@ public class Partecipation {
     @GeneratedValue
     private UUID id;
 
-    @Column
-    private Person person_id;
-
-    @Column
-    private Event event_id;
-
-    @Column
-    @Enumerated(EnumType.STRING)
-    private StatusType status;
-
     @ManyToOne
     @JoinColumn(name = "person_id", nullable = false)
     private Person person;
@@ -30,12 +20,17 @@ public class Partecipation {
     @JoinColumn(name = "event_id", nullable = false)
     private Event event;
 
+    @Column
+    @Enumerated(EnumType.STRING)
+    private StatusType status;
+
+
+
     public Partecipation() {
     }
 
-    public Partecipation(Person person_id, Event event_id, StatusType status) {
-        this.person_id = person_id;
-        this.event_id = event_id;
+    public Partecipation(StatusType status) {
+
         this.status = status;
     }
 
@@ -47,21 +42,7 @@ public class Partecipation {
         this.id = id;
     }
 
-    public Person getPerson_id() {
-        return person_id;
-    }
 
-    public void setPerson_id(Person person_id) {
-        this.person_id = person_id;
-    }
-
-    public Event getEvent_id() {
-        return event_id;
-    }
-
-    public void setEvent_id(Event event_id) {
-        this.event_id = event_id;
-    }
 
     public StatusType getStatus() {
         return status;

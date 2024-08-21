@@ -20,7 +20,7 @@ public class Location {
     @Column
     private String city;
 
-    @OneToMany (mappedBy = "location_id")
+    @OneToMany (mappedBy = "location")
     private List<Event> events;
 
     public Location() {

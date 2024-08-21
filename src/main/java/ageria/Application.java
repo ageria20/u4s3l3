@@ -1,10 +1,7 @@
 package ageria;
 
 import dao.EventDAO;
-import entities.Event;
-import entities.EventType;
-import entities.GenderType;
-import entities.Person;
+import entities.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -87,10 +84,12 @@ public class Application {
                 GenderType.FEMALE
         );
 
-        ed.save(evento1);
-        ed.save(evento2);
-        ed.save(evento3);
-        ed.save(evento4);
+        Location location1 = new Location("Central Park", "New York");
+        Location location2 = new Location("Colosseum", "Rome");
+        Location location3 = new Location("Eiffel Tower", "Paris");
+        Location location4 = new Location("Sydney Opera House", "Sydney");
+
+      ed.save(evento1);
 
 
         System.out.println("Hello World!");

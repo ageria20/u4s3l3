@@ -33,7 +33,7 @@ public class Person {
     private GenderType gender;
 
 
-    @OneToMany(mappedBy = "person_id")
+    @OneToMany(mappedBy = "person")
     private List<Partecipation> partecipationList;
 
     public Person() {

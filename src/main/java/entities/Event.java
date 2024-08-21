@@ -34,13 +34,12 @@ public class Event {
     @Column (nullable = false)
     private UUID location_id;
 
-    @OneToMany(mappedBy = "event_id")
+    @OneToMany(mappedBy = "event")
     private List<Partecipation> partecipationList;
 
 
-
     @ManyToOne
-    @JoinColumn(name = "location_id", nullable = false)
+    @JoinColumn(name = "location", nullable = false)
     private Location location;
 
 

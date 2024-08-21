@@ -94,13 +94,21 @@ public class Application {
         Location location3 = new Location("Eiffel Tower", "Paris");
         Location location4 = new Location("Sydney Opera House", "Sydney");
 
-        
+        /*pd.save(ross);
+        pd.save(rachel);
+        pd.save(chandler);
+        pd.save(monica);*/
+
+        /*ld.save(location1);
+        ld.save(location2);
+        ld.save(location3);
+        ld.save(location4);*/
 
 
-      ed.save(evento1);
+      /*ed.save(evento1);
       ed.save(evento2);
       ed.save(evento3);
-      ed.save(evento4);
+      ed.save(evento4);*/
 
 
         System.out.println("Hello World!");

@@ -31,16 +31,15 @@ public class Event {
     @Column (nullable = false)
     private int maxPersons;
 
-    @Column (nullable = false)
-    private UUID location_id;
+    @ManyToOne
+    @JoinColumn(name = "location")
+    private Location location;
 
     @OneToMany(mappedBy = "event")
     private List<Partecipation> partecipationList;
 
 
-    @ManyToOne
-    @JoinColumn(name = "location")
-    private Location location;
+
 
 
     public Event() {

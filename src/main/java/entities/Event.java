@@ -39,7 +39,7 @@ public class Event {
 
 
     @ManyToOne
-    @JoinColumn(name = "location", nullable = false)
+    @JoinColumn(name = "location")
     private Location location;
 
 

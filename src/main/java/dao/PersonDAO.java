@@ -13,7 +13,7 @@ public class PersonDAO {
         this.em = em;
     }
 
-    public void save(Event event){
+    public void save(Person event){
         EntityTransaction transaction = em.getTransaction(); // Chiediamo all'entity la transazione
         transaction.begin();
         em.persist(event); // Aggiungiamo il dato al Persist Context, ma ancora non risulta salvato

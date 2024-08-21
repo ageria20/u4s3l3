@@ -29,8 +29,9 @@ public class Partecipation {
     public Partecipation() {
     }
 
-    public Partecipation(StatusType status) {
-
+    public Partecipation(Person person, Event event, StatusType status) {
+    this.person = person;
+    this.event = event;
         this.status = status;
     }
 

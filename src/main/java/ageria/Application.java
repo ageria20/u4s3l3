@@ -1,6 +1,9 @@
 package ageria;
 
 import dao.EventDAO;
+import dao.LocationDAO;
+import dao.PartecipationDAO;
+import dao.PersonDAO;
 import entities.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -15,7 +18,9 @@ public class Application {
 
         EntityManager em = emf.createEntityManager();
         EventDAO ed = new EventDAO(em);
-
+        LocationDAO ld = new LocationDAO(em);
+        PersonDAO pd = new PersonDAO(em);
+        PartecipationDAO partD = new PartecipationDAO(em);
 
         Event evento1 = new Event(
                 "Conference on AI",
@@ -89,7 +94,13 @@ public class Application {
         Location location3 = new Location("Eiffel Tower", "Paris");
         Location location4 = new Location("Sydney Opera House", "Sydney");
 
+        
+
+
       ed.save(evento1);
+      ed.save(evento2);
+      ed.save(evento3);
+      ed.save(evento4);
 
 
         System.out.println("Hello World!");

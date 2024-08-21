@@ -5,6 +5,9 @@ import dao.LocationDAO;
 import dao.PartecipationDAO;
 import dao.PersonDAO;
 import entities.*;
+import enums.EventType;
+import enums.GenderType;
+import enums.StatusType;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -122,6 +125,8 @@ public class Application {
 
         partD.save(partConfirmed);
         partD.save(partNotConfirmed);
+
+        personFromDb.getPartecipationList().forEach(System.out::println);
 
 
         System.out.println("TUTTO OK!");

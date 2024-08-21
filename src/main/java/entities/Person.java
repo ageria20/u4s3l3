@@ -1,6 +1,7 @@
 package entities;
 
 
+import enums.GenderType;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

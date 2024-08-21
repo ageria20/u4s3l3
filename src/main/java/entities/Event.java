@@ -1,6 +1,7 @@
 package entities;
 
 
+import enums.EventType;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

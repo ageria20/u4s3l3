@@ -1,5 +1,6 @@
 package entities;
 
+import enums.StatusType;
 import jakarta.persistence.*;
 
 import java.util.UUID;
@@ -51,5 +52,14 @@ public class Partecipation {
 
     public void setStatus(StatusType status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Partecipation{" +
+                "id=" + id +
+                ", event=" + event +
+                ", status=" + status +
+                '}';
     }
 }
